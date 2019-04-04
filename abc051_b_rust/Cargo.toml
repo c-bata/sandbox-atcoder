@@ -1,0 +1,7 @@
+[package]
+name = "abc051_b_rust"
+version = "0.1.0"
+authors = ["c-bata <contact@c-bata.link>"]
+edition = "2018"
+
+[dependencies]
