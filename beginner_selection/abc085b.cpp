@@ -1,6 +1,5 @@
 #include <iostream>
-#include <string>
-#include <algorithm>
+#include <set>
 
 using namespace std;
 
@@ -13,15 +12,9 @@ int main() {
         cin >> d[i];
     }
 
-    sort(d, d + n, greater<>());
-
-    int prev = -1;
-    int cnt = 0;
-    for (int i = 0; i < n; ++i) {
-        if (prev != d[i]) {
-            cnt++;
-        }
-        prev = d[i];
+    set<int> values;
+    for (int i = 0; i < n; i++) {
+        values.insert(d[i]);
     }
-    cout << cnt << endl;
+    cout << values.size() << endl;
 }
