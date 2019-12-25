@@ -4,6 +4,7 @@ project(test_cmake CXX)
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+add_executable(stack_queue stack_queue.cpp)
 add_executable(abc081a abc081a.cpp)
 add_executable(abc087b abc087b.cpp)
 add_executable(abc083b abc083b.cpp)
