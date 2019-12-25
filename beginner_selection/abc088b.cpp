@@ -13,7 +13,9 @@ int main() {
         cin >> a[i];
     }
 
-    sort(a, a+n, [](int x, int y) { return x > y;});
+    //sort(a, a+n, [](int x, int y) { return x > y;});
+    //sort(a, a + n, greater<int>());
+    sort(a, a + n, greater<>());
 
     // for (int i = 0; i < n; ++i)
     //     cout << a[i] << " ";
