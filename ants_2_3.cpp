@@ -18,27 +18,60 @@ using namespace std;
 
 int n, W;
 int w[MAX_N], v[MAX_N];
-int memo[101][10001];
 
+// int memo[101][10001];
+//
 // i番目以降の品物から重さの総和がj以下となるように選ぶ
-int rec(int i, int j) {
-    if (memo[i][j] > -1) {
-        return memo[i][j];
-    }
+//int rec(int i, int j) {
+//    if (memo[i][j] > -1) {
+//        return memo[i][j];
+//    }
+//
+//    int res;
+//    if (i == n) {
+//        // 品物はもう残っていない
+//        res = 0;
+//    } else if (j < w[i]) {
+//        // この品物はもう入らないので次の品物を入れてみる
+//        res = rec(i + 1, j);
+//    } else {
+//        // 入れない場合と入れる場合を両方試す
+//        res = max(rec(i+1, j), rec(i+1, j-w[i]) + v[i]);
+//    }
+//    memo[i][j] = res;
+//    return res;
+//}
+//
+// int main() {
+//     cin >> n >> W;
+//     for (int i=0; i<n; i++)
+//         cin >> w[i] >> v[i];
+//
+//     memset(memo, -1, sizeof(memo));
+//
+//     int res = rec(0, W);
+//
+//     for (int i=0; i<10; i++) {
+//         for (int j=0; j<10;j++)
+//             printf(" %3d", memo[i][j]);
+//         cout << endl;
+//     }
+//     cout << res << endl;
+// }
 
-    int res;
-    if (i == n) {
-        // 品物はもう残っていない
-        res = 0;
-    } else if (j < w[i]) {
-        // この品物はもう入らないので次の品物を入れてみる
-        res = rec(i + 1, j);
-    } else {
-        // 入れない場合と入れる場合を両方試す
-        res = max(rec(i+1, j), rec(i+1, j-w[i]) + v[i]);
+int dp[101][10001];
+
+int solve() {
+    for (int i=n-1; i>=0; i--) {
+        for (int j=0; j<=W; j++) {
+            if (j < w[i]) {
+                dp[i][j] = dp[i+1][j];
+            } else {
+                dp[i][j] = max(dp[i+1][j], dp[i+1][j-w[i]] + v[i]);
+            }
+        }
     }
-    memo[i][j] = res;
-    return res;
+    return dp[0][W];
 }
 
 int main() {
@@ -46,13 +79,12 @@ int main() {
     for (int i=0; i<n; i++)
         cin >> w[i] >> v[i];
 
-    memset(memo, -1, sizeof(memo));
-
-    int res = rec(0, W);
+    memset(dp, 0, sizeof(dp));
+    int res = solve();
 
     for (int i=0; i<10; i++) {
         for (int j=0; j<10;j++)
-            printf(" %3d", memo[i][j]);
+            printf(" %3d", dp[i][j]);
         cout << endl;
     }
     cout << res << endl;
