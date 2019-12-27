@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <cstdio>
 
 using namespace std;
 
@@ -17,9 +18,14 @@ using namespace std;
 
 int n, W;
 int w[MAX_N], v[MAX_N];
+int memo[101][10001];
 
 // i番目以降の品物から重さの総和がj以下となるように選ぶ
 int rec(int i, int j) {
+    if (memo[i][j] > -1) {
+        return memo[i][j];
+    }
+
     int res;
     if (i == n) {
         // 品物はもう残っていない
@@ -31,6 +37,7 @@ int rec(int i, int j) {
         // 入れない場合と入れる場合を両方試す
         res = max(rec(i+1, j), rec(i+1, j-w[i]) + v[i]);
     }
+    memo[i][j] = res;
     return res;
 }
 
@@ -39,5 +46,14 @@ int main() {
     for (int i=0; i<n; i++)
         cin >> w[i] >> v[i];
 
-    cout << rec(0, W) << endl;
+    memset(memo, -1, sizeof(memo));
+
+    int res = rec(0, W);
+
+    for (int i=0; i<10; i++) {
+        for (int j=0; j<10;j++)
+            printf(" %3d", memo[i][j]);
+        cout << endl;
+    }
+    cout << res << endl;
 }
