@@ -3,12 +3,15 @@
 
 using namespace std;
 
+bool is_prime(int x) {
+    return false;
+}
+
 int main() {
-    int a, b, c;
-    string s;
+    int x;
+    cin >> x;
 
-    cin >> a >> b >> c;
-    cin >> s;
+    int next_prime = 0;
 
-    cout << a+b+c << " " << s << endl;
+    cout << next_prime << endl;
 }

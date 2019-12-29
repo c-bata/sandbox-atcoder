@@ -1,5 +1,4 @@
 #include <iostream>
-#include <string>
 
 using namespace std;
 
@@ -15,6 +14,9 @@ int main() {
     } else {
         takahashi = 0;
         aoki = a + b - k;
+        if (aoki < 0) {
+            aoki = 0;
+        }
     }
 
     cout << takahashi << " " << aoki << endl;
