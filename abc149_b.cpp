@@ -9,7 +9,7 @@ int main() {
 
     long long takahashi, aoki;
     if (a > k) {
-        takahashi = k-a;
+        takahashi = a - k;
         aoki = b;
     } else {
         takahashi = 0;
