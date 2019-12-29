@@ -4,11 +4,12 @@
 using namespace std;
 
 int main() {
-    int a, b, c;
-    string s;
+    int N, K, R, S, P;
+    string t;
 
-    cin >> a >> b >> c;
-    cin >> s;
+    cin >> N >> K;
+    cin >> R >> S >> P;
+    cin >> t;
 
-    cout << a+b+c << " " << s << endl;
+    cout << N + K + R + S + P << " " << t << endl;
 }
