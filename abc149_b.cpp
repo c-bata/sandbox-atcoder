@@ -4,11 +4,18 @@
 using namespace std;
 
 int main() {
-    int a, b, c;
-    string s;
+    long long a, b, k;
 
-    cin >> a >> b >> c;
-    cin >> s;
+    cin >> a >> b >> k;
 
-    cout << a+b+c << " " << s << endl;
+    long long takahashi, aoki;
+    if (a > k) {
+        takahashi = k-a;
+        aoki = b;
+    } else {
+        takahashi = 0;
+        aoki = a + b - k;
+    }
+
+    cout << takahashi << " " << aoki << endl;
 }
