@@ -17,7 +17,7 @@ int main() {
 
     for (int i=n; i>=1; i--) {
         int num = 0;
-        for (int x=i; x<=n; x+=i) {
+        for (int x=2*i; x<=n; x+=i) {
             num += b[x];
         }
         if (num % 2 == a[i]) {
@@ -31,29 +31,32 @@ int main() {
     for (int i=1; i<=n; i++)
         sum += b[i];
 
+    //cout << "debug: ";
+    //for (int i=1; i<=n; i++) {
+    //    if (i != 1)
+    //        cout << " ";
+    //    cout << b[i];
+    //}
+    //cout << endl;
+
     if (b[1] == sum % 2) {
         cout << sum << endl;
-        bool first = true;
-        for (int i=1; i<=n; i++) {
-            if (b[i] == 1) {
-                if (!first) {
-                    cout << " ";
-                } else {
-                    first = false;
+        if (sum != 0) {
+            bool first = true;
+            for (int i=1; i<=n; i++) {
+                if (b[i] == 1) {
+                    if (!first) {
+                        cout << " ";
+                    } else {
+                        first = false;
+                    }
+                    cout << i;
                 }
-                cout << i;
+            }
+            if (!first) {
+                cout << endl;
             }
         }
-        if (!first) {
-            cout << endl;
-        }
-
-        //for (int i=1; i<=n; i++) {
-        //    if (i != 1)
-        //        cout << " ";
-        //    cout << b[i];
-        //}
-        //cout << endl;
     } else {
         cout << "-1" << endl;
     }
