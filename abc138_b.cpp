@@ -4,11 +4,14 @@
 using namespace std;
 
 int main() {
-    int a, b, c;
-    string s;
+    int n, d;
+    cin >> n >> d;
 
-    cin >> a >> b >> c;
-    cin >> s;
-
-    cout << a+b+c << " " << s << endl;
+    for (int i=1; i<100; i++) {
+        n -= 2 * d + 1;
+        if (n <= 0) {
+            cout << i  << endl;
+            return 0;
+        }
+    }
 }
