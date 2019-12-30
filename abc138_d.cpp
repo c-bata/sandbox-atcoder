@@ -39,25 +39,21 @@ int main() {
     //}
     //cout << endl;
 
-    if (b[1] == sum % 2) {
-        cout << sum << endl;
-        if (sum != 0) {
-            bool first = true;
-            for (int i=1; i<=n; i++) {
-                if (b[i] == 1) {
-                    if (!first) {
-                        cout << " ";
-                    } else {
-                        first = false;
-                    }
-                    cout << i;
+    cout << sum << endl;
+    if (sum != 0) {
+        bool first = true;
+        for (int i=1; i<=n; i++) {
+            if (b[i] == 1) {
+                if (!first) {
+                    cout << " ";
+                } else {
+                    first = false;
                 }
-            }
-            if (!first) {
-                cout << endl;
+                cout << i;
             }
         }
-    } else {
-        cout << "-1" << endl;
+        if (!first) {
+            cout << endl;
+        }
     }
 }
