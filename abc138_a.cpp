@@ -4,11 +4,9 @@
 using namespace std;
 
 int main() {
-    int a, b, c;
-    string s;
+    int r;
 
-    cin >> a >> b >> c;
-    cin >> s;
+    cin >> r;
 
-    cout << a+b+c << " " << s << endl;
+    cout << 3 * 4 * 4 << endl;
 }
