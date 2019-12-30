@@ -8,5 +8,5 @@ int main() {
 
     cin >> r;
 
-    cout << 3 * 4 * 4 << endl;
+    cout << 3 * r * r << endl;
 }
