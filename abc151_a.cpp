@@ -1,14 +1,16 @@
 #include <iostream>
 #include <string>
+#include <sstream>
 
 using namespace std;
 
 int main() {
-    int a, b, c;
-    string s;
+    char s;
 
-    cin >> a >> b >> c;
     cin >> s;
 
-    cout << a+b+c << " " << s << endl;
+    string x;
+    x += (s+1);
+
+    cout << x << endl;
 }
