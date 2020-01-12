@@ -15,11 +15,11 @@ int main() {
     }
 
     int penalty_count[n+1];
-    memset(penalty_count, 0, sizeof(penalty_count));
-
     bool is_ac[n+1];
-    for (int i=0; i<n+1; i++)
+    for (int i=0; i<n+1; i++) {
         is_ac[i] = false;
+        penalty_count[i] = 0;
+    }
 
     int success = 0;
     for (int i=0; i<m; i++) {
