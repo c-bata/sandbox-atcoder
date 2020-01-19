@@ -13,6 +13,7 @@ CPP_DIR=$(cd $(dirname $0); pwd)
 cat > ${CPP_DIR}/${NAME}.cpp <<EOF
 #include <iostream>
 #include <string>
+#include <vector>
 
 #define rep(i, n) for (int i=0; i< (n); ++i)
 typedef long long ll;
