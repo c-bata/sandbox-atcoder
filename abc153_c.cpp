@@ -10,11 +10,26 @@ template<class T> inline bool chmin(T& a, T b) { if (a > b) { a = b; return 1; }
 using namespace std;
 
 int main() {
-    int a, b, c;
-    string s;
+    int n, k;
 
-    cin >> a >> b >> c;
-    cin >> s;
+    cin >> n >> k;
 
-    cout << a+b+c << " " << s << endl;
+    int h[n];
+    rep(i, n) cin >> h[i];
+
+    sort(h, h+n, greater<>());
+    //rep(i, n) cout << h[i] << endl;
+
+    if (n <= k) {
+        // 必殺技は数えない
+        cout << 0 << endl;
+        return 0;
+    }
+    ll sum = 0;
+    // 0 <= k
+    for (int i=k; i<n; i++) {
+        sum += h[i];
+    }
+
+    cout << sum << endl;
 }
