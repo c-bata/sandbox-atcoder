@@ -11,11 +11,10 @@ template<class T> inline bool chmin(T& a, T b) { if (a > b) { a = b; return 1; }
 using namespace std;
 
 int main() {
-    int a, b, c;
     string s;
 
-    cin >> a >> b >> c;
     cin >> s;
 
-    cout << a+b+c << " " << s << endl;
+    rep(i, s.length()) cout << "x";
+    cout << endl;
 }
