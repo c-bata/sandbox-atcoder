@@ -27,33 +27,24 @@ int main() {
     cin >> n >> k;
 
     int p[n];
-    rep(i, n) cin >> p[i];
-
-    int sum = 0;
-    rep(i, k) {
-        sum += p[i];
+    double kitaichi_arr[n];
+    rep(i, n) {
+        cin >> p[i];
+        kitaichi_arr[i] = (double) (p[i] * (p[i] + 1)) / (2 * (double) p[i]);
     }
-    int max_pos = 0;
-    int max_sum = sum;
 
-    rep(i, n-k-1) {
-        //cout << i << " " << sum << " " << kitaichi(p, k, i) << endl;
-        sum = sum - p[i] + p[i+k];
-        if (max_sum < sum) {
-            max_sum = sum;
-            max_pos = i+1;
+    double kitaichi_i = 0;
+    rep(i, k) {
+        kitaichi_i += kitaichi_arr[i];
+    }
+
+    double kitaichi_max = kitaichi_i;
+    rep(i, n-k) {
+        kitaichi_i = kitaichi_i - kitaichi_arr[i] + kitaichi_arr[i+k];
+        if (kitaichi_max < kitaichi_i) {
+            kitaichi_max = kitaichi_i;
         }
     }
 
-    //cout << max_pos << endl;
-
-    double max_kitaichi = 0;
-    for (int i=max_pos; i<max_pos+k; i++) {
-        double souwa = (double) (p[i] * (p[i] + 1)) / 2;
-        double bunbo = p[i];
-        double kitaichi = souwa / bunbo;
-        max_kitaichi += kitaichi;
-    }
-
-    cout << max_kitaichi << endl;
+    cout << kitaichi_max << endl;
 }

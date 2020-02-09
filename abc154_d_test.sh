@@ -9,6 +9,10 @@ g++ -o ./build/abc154_d -Wall -O2 -std=c++14 ./abc154_d.cpp
 1 2 2 4 5
 EOF
 
+./build/abc154_d <<EOF
+5 3
+4 5 2 1 1
+EOF
 
 ./build/abc154_d <<EOF
 4 1
