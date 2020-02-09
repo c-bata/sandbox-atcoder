@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <set>
 
 #define rep(i, n) for (int i=0; i< (n); ++i)
 typedef long long ll;
@@ -11,11 +12,20 @@ template<class T> inline bool chmin(T& a, T b) { if (a > b) { a = b; return 1; }
 using namespace std;
 
 int main() {
-    int a, b, c;
-    string s;
+    ll n;
+    cin >> n;
 
-    cin >> a >> b >> c;
-    cin >> s;
+    set<int> s;
 
-    cout << a+b+c << " " << s << endl;
+    int a;
+    rep(i, n) {
+        cin >> a;
+        s.insert(a);
+        if (s.size() != i+1) {
+            cout << "NO" << endl;
+            return 0;
+        }
+    }
+
+    cout << "YES" << endl;
 }
