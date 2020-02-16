@@ -11,11 +11,20 @@ template<class T> inline bool chmin(T& a, T b) { if (a > b) { a = b; return 1; }
 using namespace std;
 
 int main() {
-    int a, b, c;
-    string s;
+    int n;
+    cin >> n;
 
-    cin >> a >> b >> c;
-    cin >> s;
+    int a[n];
 
-    cout << a+b+c << " " << s << endl;
+    rep(i, n) cin >> a[i];
+
+    rep(i, n) {
+        if (a[i] % 2 == 0) {
+            if (!(a[i] % 3 == 0 || a[i] % 5 == 0)) {
+                cout << "DENIED" << endl;
+                return 0;
+            }
+        }
+    }
+    cout << "APPROVED" << endl;
 }
