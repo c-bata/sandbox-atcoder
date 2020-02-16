@@ -12,10 +12,18 @@ using namespace std;
 
 int main() {
     int a, b, c;
-    string s;
 
     cin >> a >> b >> c;
-    cin >> s;
 
-    cout << a+b+c << " " << s << endl;
+    if (a == b && a != c) {
+        cout << "Yes" << endl;
+        return 0;
+    } else if (b == c && b != a) {
+        cout << "Yes" << endl;
+        return 0;
+    } else if (a == c && a != b) {
+        cout << "Yes" << endl;
+        return 0;
+    }
+    cout << "No" << endl;
 }
