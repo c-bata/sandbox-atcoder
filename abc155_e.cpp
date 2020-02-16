@@ -43,4 +43,27 @@ int main() {
         //cout << ctoi(s[i]) << " " << 5 - abs(n - 5) << endl;
     }
     cout << sihei << endl;
+
+    /*
+    bool ookuharaatta = false;
+    sihei = 0;
+    for (int i=0; i<digit; i++) {
+        int n = ctoi(s[i]);
+        int x = 5 - abs(n - 5);
+
+        if (ookuharaatta) {
+            sihei += 9-n;
+            ookuharaatta = false;
+            cout << sihei << endl;
+            continue;
+        }
+
+        if (i != digit-1 && ctoi(s[i+1]) >= 5) {
+            ookuharaatta = true;
+        }
+        sihei += x+1;
+        cout << sihei << endl;
+    }
+    cout << sihei << endl;
+     */
 }
