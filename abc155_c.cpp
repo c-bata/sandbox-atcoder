@@ -43,7 +43,7 @@ int main() {
 
     sort(map_pair, map_pair+m.size(), [](pair<string, int> x, pair<string, int> y) {
         if (x.second == y.second) {
-            return strcmp(x.first.c_str(), y.first.c_str()) > 0;
+            return strcmp(x.first.c_str(), y.first.c_str()) < 0;
         }
         return x.second > y.second;
     });
